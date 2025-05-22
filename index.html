@@ -10,9 +10,29 @@
     // untuk hari
     document.addEventListener("DOMContentLoaded", () => {
       const dateSpan = document.getElementById("date-today");
-      const options = { weekday: 'long', day: 'numeric', month: 'long', year: 'numeric' };
-      const today = new Date().toLocaleDateString('en-US', options);
-      dateSpan.textContent = today;
+
+  function updateDateTime() {
+    const now = new Date();
+
+    const options = {
+      weekday: 'long',
+      day: 'numeric',
+      month: 'long',
+      year: 'numeric'
+    };
+
+    const datePart = now.toLocaleDateString('en-US', options);
+    const timePart = now.toLocaleTimeString('en-US', {
+      hour: '2-digit',
+      minute: '2-digit',
+      second: '2-digit'
+    });
+
+    dateSpan.textContent = `${datePart}, ${timePart}`;
+  }
+
+  updateDateTime();
+  setInterval(updateDateTime, 1000); 
 
     // Untuk navigation: scroll horizontal kiri terus-menerus (looping)
   window.addEventListener("load", function () {
@@ -95,14 +115,15 @@
     <!-- Right Side: Search, Subscribe, Login -->
     <div class="flex items-center space-x-3">
       <!-- Search Input + Icon -->
-      <div class="flex items-center bg-[#FFF3FA] px-3 py-3 rounded-full">
-        <input
-          type="text"
-          placeholder="Search..."
-          class="bg-transparent outline-none text-sm placeholder-[#252525] w-32 md:w-48"
-        />
-        <img src="img/search.png" alt="Search" class="w-5 h-5 ml-2" />
-      </div>
+      <div class="flex items-center bg-[#FFF3FA] px-4 py-3 rounded-full w-full max-w-90">
+  <input
+    type="text"
+    placeholder="Search..."
+    class="bg-transparent outline-none text-sm placeholder-[#252525] w-full"
+  />
+  <img src="img/search.png" alt="Search" class="w-5 h-5 ml-2" />
+</div>
+
 
       <!-- Subscribe Button -->
       <!-- <button class="text-sm font-medium border px-4 py-3 rounded-full border-gray-300 ">
@@ -414,7 +435,7 @@
     </div>
     <!-- Card 1 -->
     <div>
-      <img src="img/gambar2.jpg" class="w-full h-48 object-cover rounded-lg mb-2" />
+      <img src="img/gambar1.jpg" class="w-full h-48 object-cover rounded-lg mb-2" />
       <h4 class="font-semibold leading-snug">How Formula E Is Changing Motorsport Forever</h4>
       <div class="text-sm text-gray-500 mt-1">Formula E • 27/08/2023</div>
     </div>
@@ -471,44 +492,58 @@
     <p class="text-gray-600 mb-6">Subscribe to our newsletter for the latest news and exclusive updates</p>
     <form class="flex flex-col sm:flex-row justify-center gap-4 max-w-xl mx-auto">
       <input type="email" placeholder="Enter your email" class="w-full sm:w-auto flex-1 px-4 py-2 border rounded-full focus:outline-none focus:ring focus:border-blue-300">
-      <button class="bg-[#FFF3FA] text-black px-6 py-2 rounded-full">Subscribe</button>
+      <button class="bg-[#F2F4FF] text-black px-6 py-2 rounded-full border border-gray-300]">Subscribe</button>
     </form>
   </div>
 
   <!-- Footer Info -->
-  <div class="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-8 border-t pt-12">
+  <div class="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-8 border-t pt-12">
     <!-- About -->
     <div>
       <h4 class="font-bold mb-3">About Us</h4>
       <p class="text-sm text-gray-600">Jurnalistik Program winnicode adalah program pengembangan sumber daya manusia yang ditujukan bagi pemuda pemudi yang berkarir di dunia report.</p>
     </div>
 
-    <!-- Quick Links -->
-    <div>
-      <h4 class="font-bold mb-3">Quick Links</h4>
-      <ul class="space-y-2 text-sm text-gray-600">
-        <li><a href="#" class="hover:text-black">Home</a></li>
-        <li><a href="#" class="hover:text-black">Politics</a></li>
-        <li><a href="#" class="hover:text-black">Sports</a></li>
-        <li><a href="#" class="hover:text-black">Technology</a></li>
+    <!-- QUICK LINKS -->
+    <div class="space-y-2">
+      <h4 class="font-semibold text-lg">Quick Links</h4>
+      <ul class="text-sm text-gray-600 space-y-1">
+        <li><a href="/" class="hover:text-[#5271FF]">Beranda</a></li>
+        <li><a href="/berita" class="hover:text-[#5271FF]">Berita</a></li>
+        <li><a href="/kontak" class="hover:text-[#5271FF]">Kontak Kami</a></li>
+        <li><a href="/privasi" class="hover:text-[#5271FF]">Privasi &amp; Policy</a></li>
+        <li><a href="/tentang" class="hover:text-[#5271FF]">Tentang Kami</a></li>
       </ul>
     </div>
 
     <!-- Social Media -->
     <div>
       <h4 class="font-bold mb-3">Follow Us</h4>
-      <div class="flex gap-4 text-gray-600 text-xl">
-        <a href="#" class="hover:text-black">🌐</a>
-        <a href="#" class="hover:text-black">🐦</a>
-        <a href="#" class="hover:text-black">📘</a>
-        <a href="#" class="hover:text-black">📸</a>
+      <div class="flex gap-4">
+        <!-- Website -->
+        <a href="https://winnicode.com/" target="_blank" class="hover:opacity-80 transition">
+          <img src="img/web.png" alt="Website" class="w-6 h-6">
+        </a>
+        <!-- Instagram -->
+        <a href="https://www.instagram.com/winnicodeofficial/" target="_blank" class="hover:opacity-80 transition">
+          <img src="img/instagram.png" alt="Instagram" class="w-6 h-6">
+        </a>
       </div>
+    </div>
+
+    <!-- Kontak Kami -->
+    <div>
+      <h4 class="font-bold mb-4">Kontak Kami</h4>
+      <ul class="space-y-2 text-sm text-gray-600">
+        <li><span class="text-black font-medium">E-Mail:</span> winnicodegarudaofficial@gmail.com</li>
+        <li><span class="text-black font-medium">Call Center:</span> 6285159932501 (24 Jam)</li>
+      </ul>
     </div>
   </div>
 
   <!-- Copyright -->
   <div class="text-center text-sm text-gray-500 mt-12">
-    &copy; 2025 Rea Media. All rights reserved.
+    Copyright &copy; 2025 PT. WINNICODE GARUDA TEKNOLOGI.
   </div>
 </section>
 
