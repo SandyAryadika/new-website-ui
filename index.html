@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>OnField</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      const dateSpan = document.getElementById("date-today");
+      const options = { weekday: 'long', day: 'numeric', month: 'long', year: 'numeric' };
+      const today = new Date().toLocaleDateString('en-US', options);
+      dateSpan.textContent = today;
+    });
+  </script>
+</head>
+<body class="bg-white text-[#252525]">
+
+  <!-- Top Bar -->
+  <div class="flex justify-between items-center px-6 py-1 text-sm text-gray-600 border-b">
+    <span id="date-today">Loading date...</span>
+    <div class="flex gap-4 items-center">
+      <span>Bekasi</span>
+      <span>🌤️ 26°C</span>
+    </div>
+  </div>
+
+  <!-- Header: Logo + Right Menu -->
+  <header class="flex items-center justify-between px-6 py-4 border-b text-sm">
+    <!-- Logo -->
+    <div class="text-3xl font-bold text-green-600 whitespace-nowrap">
+      On<span class="text-black">Field</span>
+    </div>
+
+    <!-- Right Side: Search, Subscribe, Login -->
+    <div class="flex items-center space-x-4">
+      <button class="text-xl" aria-label="Search">🔍</button>
+      <button class="text-sm font-medium">Subscribe</button>
+      <button class="bg-green-600 text-white px-4 py-1 rounded text-sm font-medium">
+        Login
+      </button>
+    </div>
+  </header>
+
+  <!-- Navigation: Separate Section Below Header -->
+  <nav class="flex space-x-6 px-6 py-3 border-b text-sm font-medium">
+    <a href="#" class="text-green-600 border-b-2 border-green-600 pb-1">Home</a>
+    <a href="#" class="hover:text-green-600">Sports</a>
+    <a href="#" class="hover:text-green-600">Score</a>
+    <a href="#" class="hover:text-green-600">Watch</a>
+    <a href="#" class="hover:text-green-600">Odds</a>
+    <a href="#" class="hover:text-green-600">Stories</a>
+    <a href="#" class="hover:text-green-600">Podcast</a>
+  </nav>
+
+</body>
+</html>
