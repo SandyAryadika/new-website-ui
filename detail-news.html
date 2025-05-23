@@ -5,39 +5,89 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Detail Berita - Judul Berita</title>
   <link href="https://cdn.jsdelivr.net/npm/tailwindcss@3.3.2/dist/tailwind.min.css" rel="stylesheet" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+      /* Global default */
+      body {
+        font-family: 'Lexend', sans-serif;
+      }
+
+      /* Utility class untuk birthstone */
+      .font-birthstone {
+  font-family: 'Birthstone', sans-serif;
+}
+        .scrollbar-hide::-webkit-scrollbar {
+    display: none;
+    }
+    .scrollbar-hide {
+        -ms-overflow-style: none;
+        scrollbar-width: none;
+    }
+    </style>
 </head>
-<body class="bg-gray-50 min-h-screen flex flex-col">
+<body>
+<!-- Detail Berita -->
+<!-- SECTION: Detail Berita -->
+<section class="px-6 py-12">
+  <!-- Gambar Utama -->
+  <div>
+    <img src="img/gambar1.jpg" alt="Detail Image" class="w-full rounded-lg object-cover h-96 mb-8">
+  </div>
 
-  <!-- Navbar / Header -->
-  <header class="bg-white shadow p-4">
-    <div class="container mx-auto flex justify-between items-center">
-      <a href="index.html" class="text-2xl font-bold text-blue-600">MyNewsSite</a>
-      <nav>
-        <a href="index.html" class="text-gray-700 hover:text-blue-600">Beranda</a>
-      </nav>
+  <!-- Judul & Sisi Kanan -->
+  <div class="grid grid-cols-1 lg:grid-cols-12 gap-6">
+    <!-- Judul Berita -->
+    <div class="lg:col-span-9">
+      <h1 class="text-4xl font-bold leading-tight mb-2">
+        World’s Fastest Marathon Runner Says London Race ‘Is Like My Home’
+      </h1>
     </div>
-  </header>
 
-  <!-- Main Content -->
-  <main class="container mx-auto px-6 py-10 flex-grow">
-    <article class="max-w-3xl mx-auto bg-white p-8 rounded-lg shadow-md">
-      <h1 class="text-3xl font-bold mb-4">Judul Berita Contoh yang Sangat Menarik</h1>
-      <p class="text-sm text-gray-500 mb-2">Dipublikasikan pada 23 Mei 2025 oleh <span class="font-semibold">Rea Sandika</span></p>
-      <img src="img/gambar1.jpg" alt="Gambar berita" class="w-full rounded mb-6" />
-      
-      <p class="text-gray-700 leading-relaxed mb-4">
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed malesuada dui nec lacus faucibus, et maximus nunc aliquam. 
-        Nullam in fermentum libero. Curabitur dignissim, turpis at venenatis commodo, magna nisl condimentum metus, a dapibus eros orci quis massa.
+    <!-- Konten Lain dari Author -->
+    <div class="lg:col-span-3 space-y-6">
+      <h3 class="text-xl font-semibold text-[#5271FF]">Artikel Lain dari Penulis</h3>
+      <div class="space-y-4">
+        <!-- Artikel Ringkas -->
+        <div class="bg-white p-3 rounded-lg shadow">
+          <img src="img/gambar1.jpg" class="w-full h-28 object-cover rounded mb-2" />
+          <h4 class="font-semibold text-sm">Tips Marathon di Kota Besar</h4>
+          <p class="text-xs text-gray-500">Panduan menghadapi lomba marathon di tengah cuaca yang tidak menentu.</p>
+        </div>
+        <!-- Artikel Ringkas -->
+        <div class="bg-white p-3 rounded-lg shadow">
+          <img src="img/gambar2.jpg" class="w-full h-28 object-cover rounded mb-2" />
+          <h4 class="font-semibold text-sm">Latihan Lari Setiap Hari?</h4>
+          <p class="text-xs text-gray-500">Berapa frekuensi latihan yang direkomendasikan oleh pelatih profesional?</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Deskripsi Berita & Konten Tambahan -->
+  <div class="grid grid-cols-1 lg:grid-cols-12 gap-6 mt-8">
+    <!-- Deskripsi Panjang -->
+    <div class="lg:col-span-9 prose max-w-none text-gray-700 space-y-4">
+      <p>
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur at turpis luctus, porttitor ante at, eleifend nulla.
+        Sed tristique libero nec nulla sodales, nec tincidunt velit pulvinar...
       </p>
-      <p class="text-gray-700 leading-relaxed mb-4">
-        Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Integer sed dignissim arcu. 
-        Morbi in ligula id eros faucibus aliquam. Vivamus vitae ligula nunc. Sed eu dictum nulla.
+      <p>
+        Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Fusce iaculis ultrices metus...
       </p>
-      <p class="text-gray-700 leading-relaxed">
-        Aliquam erat volutpat. Suspendisse potenti. Curabitur sit amet mi nec purus tincidunt ullamcorper. Donec dignissim condimentum leo, 
-        a convallis sapien dapibus a.
+      <p>
+        Mauris id neque nec augue lobortis volutpat. Nam eu turpis sagittis, volutpat nunc at, dictum enim. Sed at velit eu metus...
       </p>
-    </article>
-  </main>
+    </div>
+
+    <!-- Sisi Kanan: Konten Lainnya -->
+    <div class="lg:col-span-3 space-y-4">
+      <img src="img/gambar1.jpg" class="w-full h-28 object-cover rounded mb-2" />
+      <h4 class="font-semibold text-sm">Strategi Pelari Maraton Dunia</h4>
+      <p class="text-xs text-gray-500">Bagaimana para pelari top dunia menyusun strategi saat lomba.</p>
+    </div>
+  </div>
+</section>
+
+
 </body>
 </html>
